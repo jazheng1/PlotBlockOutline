@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+using Curve;
 from mpl_toolkits.mplot3d import axes3d
 import numpy as np
 
@@ -14,7 +14,7 @@ public void plot_block_outline(block Block,ax axes3d) {
         x = X[i,j,k];
         y = Y[i,j,k];
         z = Z[i,j,k];
-        ax.plot3D(x,y,z);
+        curve rows = new curve(x,y,z);
     }
   }
   for (int j = 0; j < JMAX-1; j++){    // Plots curves at constant I bounds
@@ -23,7 +23,7 @@ public void plot_block_outline(block Block,ax axes3d) {
           x = X[i,j,k];
           y = Y[i,j,k];
           z = Z[i,j,k];
-          ax.plot3D(x,y,z);
+          curve rowAndCol = new curve(x,y,z);
         }
       }
   }
@@ -33,7 +33,7 @@ public void plot_block_outline(block Block,ax axes3d) {
           x = X[i,j,k];
           y = Y[i,j,k];
           z = Z[i,j,k];
-          ax.plot3D(x,y,z);
+          curve columns = new curve(x,y,z);
         }
       }
   }
